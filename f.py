@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import seaborn as sns
 import nltk
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 from wordcloud import WordCloud
 import re
