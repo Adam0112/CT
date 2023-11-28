@@ -30,6 +30,20 @@ st.markdown(
 # Title of the app
 st.markdown("<h1 class='centered-title'>CrowdTangle Analysis</h1>", unsafe_allow_html=True)
 
+# Load stopwords from the GitHub repository
+stopwords_url = "https://raw.githubusercontent.com/Adam0112/CT/main/english/stopwords.txt"
+stopwords = set()
+
+try:
+    import requests
+    response = requests.get(stopwords_url)
+    if response.status_code == 200:
+        stopwords = set(response.text.splitlines())
+    else:
+        st.error("Failed to fetch stopwords data.")
+except Exception as e:
+    st.error(f"Error loading stopwords: {str(e)}")
+
 # File uploader for the CSV file
 uploaded_csv = st.file_uploader("Upload a CSV file", type="csv")
 
