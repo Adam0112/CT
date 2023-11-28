@@ -32,13 +32,13 @@ st.markdown("<h1 class='centered-title'>CrowdTangle Analysis</h1>", unsafe_allow
 
 # Load stopwords from the GitHub repository
 stopwords_url = "https://raw.githubusercontent.com/Adam0112/CT/main/stopwords.txt"
-stopwords = set()
+stop_words = set()
 
 try:
     import requests
     response = requests.get(stopwords_url)
     if response.status_code == 200:
-        stopwords = set(response.text.splitlines())
+        stop_words = set(response.text.splitlines())
     else:
         st.error("Failed to fetch stopwords data.")
 except Exception as e:
@@ -77,8 +77,8 @@ if st.button('Generate Word Cloud'):
         # Read CSV file
         df = pd.read_csv(uploaded_csv)
 
-        # Prepare stop words for Word Cloud
-        stop_words = set(stopwords.words('english'))
+        # # Prepare stop words for Word Cloud
+        # stop_words = set(stopwords.words('english'))
 
         # Check if a custom stop words file was uploaded
         if uploaded_txt_wc is not None:
