@@ -187,7 +187,7 @@ if st.button('Analyse Time Series Engagement'):
 # Hourly Distribution Analysis
 st.markdown("<br><br>", unsafe_allow_html=True)
 
-st.header("Daytime Cycle")
+st.header("Post Distribution by Hour")
 
 if st.button('Analyse Hourly Post Distribution'):
     if uploaded_csv is not None:
