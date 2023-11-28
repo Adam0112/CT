@@ -31,7 +31,7 @@ st.markdown(
 st.markdown("<h1 class='centered-title'>CrowdTangle Analysis</h1>", unsafe_allow_html=True)
 
 # Load stopwords from the GitHub repository
-stopwords_url = "https://raw.githubusercontent.com/Adam0112/CT/main/english/stopwords.txt"
+stopwords_url = "https://raw.githubusercontent.com/Adam0112/CT/main/stopwords.txt"
 stopwords = set()
 
 try:
